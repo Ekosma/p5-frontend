@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 //import { connect } from "react-redux";
 import Home from "./components/Home";
 import LessonForm from "./components/LessonForm";
-import LessonIndex from "./components/LessonIndex";
+import Lesson from "./components/Lesson";
 
 
 
@@ -14,7 +14,7 @@ function App() {
         <Home />
         <Routes>
           <Route exact path="/" component={Home} />
-          <Route path="/lessons/:id" component={LessonIndex} />
+          <Route path="/lessons/:id" component={Lesson} />
           <Route path="/lessons/new" component={LessonForm} />
         </Routes>
       </Router>
