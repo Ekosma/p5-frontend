@@ -9,7 +9,7 @@ import Comments from './Comments';
 export default function Lesson() {
   return (
     <div>
-    Lesson Page 
+    <h1>Lesson Page</h1> 
     <Header />
     <LessonIndex />
     <AddComment />
