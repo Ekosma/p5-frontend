@@ -1,9 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-/*import Home from "./home/HomeContainer";
-import LessonForm from "./lessonForm/LessonFormContainer";
-import Lesson from "./lesson/LessonContainer";
-import Lessons from "./lessons/LessonContainer"*/
 
 
 export default function header() {

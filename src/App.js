@@ -18,7 +18,6 @@ function App() {
           <Route exact path="/" component={Lessons} />
           <Route exact path="/Lesson/new" component={LessonForm} />
           <Route path="/Lesson/:id" component={Lesson} />
-          
         </Switch>
         <Footer />
       </Router>
