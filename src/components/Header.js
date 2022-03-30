@@ -8,14 +8,14 @@ import Lessons from "./lessons/LessonContainer"
 
 export default function header() {
   return (
-    <Router>
+   /* <Router>
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/lessons" element={<Lessons />}>
         <Route path=":id" element={<Lesson />} />
         <Route path="new" element={<LessonForm />} />
       </Route>
-    </Routes>
+    </Routes>*/
     <div>
     <ul>
     <li><Link to="/"> Teacher Gives Teachers</Link> </li>
@@ -23,6 +23,6 @@ export default function header() {
     <li><Link to="/lessons/:id">Lessons</Link> </li>
     </ul>
   </div>
-  </Router>
+  //</Router>
   )
 }
