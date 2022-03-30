@@ -1,6 +1,5 @@
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import { connect } from "react-redux";
 import LessonForm from "./components/lessonForm/LessonFormContainer";
 import Lesson from "./components/lesson/LessonContainer";
 import Lessons from "./components/lessons/LessonContainer"
