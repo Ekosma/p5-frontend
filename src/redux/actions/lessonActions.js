@@ -8,8 +8,8 @@
       body: JSON.stringify({ lesson: data }),
     })
       .then((res) => res.json())
-      .then((player) =>
-        dispatch({ type: "UPLOAD_LESSON_SUCCESS", payload: player })
+      .then((lesson)) =>
+        dispatch({ type: "UPLOAD_LESSON_SUCCESS", payload: lesson })
       )
   }
 }*/

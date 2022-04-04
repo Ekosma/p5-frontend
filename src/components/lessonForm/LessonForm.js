@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import axios from 'axios'
+import PdfUpload from "./Pdf_Upload";
+//import { connect } from "react-redux";
+
 
 class LessonForm extends Component {
-  
+  render () {
+    return (
+      <PdfUpload />
+    )
+  }
 }
-
-export default //connect(null, { uploadLesson })(LessonForm);
+export default (LessonForm);
