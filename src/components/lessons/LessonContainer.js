@@ -1,14 +1,14 @@
 import React from 'react'
+import Search from './Search'
+
 
 
 export default function LessonContainer() {
   return (    
     <div>
       LessonContainer
+      <Search />
     </div>
   )
 }
 
-const LESSONS = [
-  {name: 'FUNctions', description: "Functions that are fun", grade: "fifth, sixth, and seventh", content: "THIS IS SUPPOSED TO BE THE PDF SPOT BUT I THINK I MAY NEED TO REDO MY DATABASE D:"}
-]
