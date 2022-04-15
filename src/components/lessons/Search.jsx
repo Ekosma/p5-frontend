@@ -1,9 +1,6 @@
 import { Dropdown } from 'react-bootstrap';
-
-
-// This holds a list of some fiction people
-// Some  have the same name but different age and id
 import React, { Component} from 'react'
+import DropdownItem from './dropdownItem';
 
 export default class Search extends Component {
   constructor(props) {
@@ -27,38 +24,13 @@ export default class Search extends Component {
     })
   }
 
-
   render() {
     const grades = ["Kindergarten", "First", "Second", "Third"] 
     const subjects = ["English", "History", "Mathematics", "Science"]
-
-    const listGrades = grades.map((grade) =>
-      <Dropdown.Item key={grade} onClick={this.gradeChoice}> {grade} </Dropdown.Item>
-    ) 
-
-    const listSubjects = subjects.map((subject) =>
-      <Dropdown.Item key={subject} onClick={this.subjectChoice}> {subject} </Dropdown.Item>
-    ) 
-    
-
     return (
-      <div>
-      <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic1">
-        {this.state.grade}
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {listGrades}
-      </Dropdown.Menu>
-    </Dropdown>
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic2">
-        {this.state.subject}
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {listSubjects}
-      </Dropdown.Menu>
-    </Dropdown>
+    <div>
+      <DropdownItem list={grades} choice={this.state.grade} onClick={this.gradeChoice} />
+      <DropdownItem list={subjects} choice={this.state.subject} onClick={this.subjectChoice} />
     </div>
     )
   }
