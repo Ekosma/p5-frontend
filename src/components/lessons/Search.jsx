@@ -1,6 +1,7 @@
 import { Dropdown } from 'react-bootstrap';
 import React, { Component} from 'react'
 import DropdownItem from './dropdownItem';
+import "./Search.css"
 
 export default class Search extends Component {
   constructor(props) {
@@ -27,10 +28,12 @@ export default class Search extends Component {
   render() {
     const grades = ["Kindergarten", "First", "Second", "Third"] 
     const subjects = ["English", "History", "Mathematics", "Science"]
+
+    const listGrade = <DropdownItem list={grades} choice={this.state.grade} onClick={this.gradeChoice} />
+    const listSubject = <DropdownItem list={subjects} choice={this.state.subject} onClick={this.subjectChoice} />
     return (
-    <div>
-      <DropdownItem list={grades} choice={this.state.grade} onClick={this.gradeChoice} />
-      <DropdownItem list={subjects} choice={this.state.subject} onClick={this.subjectChoice} />
+    <div id="search">
+      test test {listGrade} test test {listSubject}
     </div>
     )
   }

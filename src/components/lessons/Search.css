@@ -1,36 +1,3 @@
-.container {
-  padding-top: 30px;
-  width: 300px;
-  margin: auto;
-}
-
-.input {
-  padding: 5px 15px;
-  width: 300px;
-}
-
-.lesson-list {
-  margin-top: 30px;
-}
-
-.lesson {
-  list-style: none;
-  margin: 10px 0;
-  padding: 10px;
-  background: #eee;
+#search {
   display: flex;
-  justify-content: space-between;
-}
-
-.lesson-id {
-  color: red;
-  margin-right: 20px;
-}
-
-.lesson-name {
-  color: blue;
-}
-
-.lesson-age {
-  margin-left: auto;
 }
