@@ -1,6 +1,5 @@
-import { Dropdown } from 'react-bootstrap';
-import React, { Component} from 'react'
-import DropdownItem from './dropdownItem';
+import React, { Component } from 'react'
+import DropdownItem from '../dropdownItem';
 import "./Search.css"
 
 export default class Search extends Component {
@@ -26,8 +25,8 @@ export default class Search extends Component {
   }
 
   render() {
-    const grades = ["Kindergarten", "First", "Second", "Third"] 
-    const subjects = ["English", "History", "Mathematics", "Science"]
+    const grades = ["Kindergarten", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth" ] 
+    const subjects = ["English", "History", "Mathematics", "Science", "Fine Arts", "Athletics", "Elective"]
 
     const listGrade = <DropdownItem list={grades} choice={this.state.grade} onClick={this.gradeChoice} />
     const listSubject = <DropdownItem list={subjects} choice={this.state.subject} onClick={this.subjectChoice} />
@@ -38,10 +37,6 @@ export default class Search extends Component {
     )
   }
 }
-
-
-
-
 
 const LESSONS = [
   { id: 1, name: 'Quadratics', grade: 'kindergarten', subject:'math'},
