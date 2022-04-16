@@ -45,20 +45,17 @@ class LessonFormContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("handleSubmit")
-    console.log(e)
+    //console.log("handleSubmit")
+    //console.log(e)
     const lesson = {
       name: this.state.name,
       description: this.state.description,
       grade: this.state.grade,
       subject: this.state.subject
     }
-    console.log(lesson)
+    //console.log(lesson)
     this.props.fetchLessons(lesson)
-    console.log("handleSubmit")
-    this.setState({
-      
-    })
+    //console.log("handleSubmit")
   }
 
   render() {
