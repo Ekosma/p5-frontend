@@ -29,7 +29,7 @@ class LessonFormContainer extends Component {
 
   nameChoice = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    //console.log(e.target.value)
     this.setState({
       name: e.target.value
     })
@@ -37,7 +37,7 @@ class LessonFormContainer extends Component {
 
   descriptionChoice = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    //console.log(e.target.value)
     this.setState({
       description: e.target.value
     })

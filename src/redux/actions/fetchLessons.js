@@ -11,6 +11,7 @@ export const fetchLessons = (data) => {
       body: JSON.stringify({ lesson: data }),
     })
       .then((res) => res.json())
-      .then((lesson) => dispatch({ type: "UPLOAD_LESSON_SUCCESS", payload: lesson }))
+      .then((lessons) => dispatch({ type: "UPLOAD_LESSON_SUCCESS", payload: lessons }))
   }
 }
+
