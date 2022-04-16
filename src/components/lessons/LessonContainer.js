@@ -38,9 +38,9 @@ import Card from './Cards'
     const filteredLessons = this.props.lessons
       .filter(lesson => this.state.grade === 'grade' ? true : lesson.grade === this.state.grade)
       .filter(lesson => this.state.subject === 'subject' ? true : lesson.subject === this.state.subject)
-    console.log(this.props.lessons)
-    console.log(this.state.grade)
-    console.log(filteredLessons)
+    //console.log(this.props.lessons)
+    //console.log(this.state.grade)
+    //console.log(filteredLessons)
     const listLessons = <Card data={filteredLessons} />
     //console.log(this.props.lessons)
     return ( 

@@ -6,7 +6,6 @@ import uploadForm from './reducers/uploadForm'
 
 const reducer = combineReducers({
   uploadForm,
-  
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
