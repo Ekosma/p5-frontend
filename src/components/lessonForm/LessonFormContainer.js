@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import PdfUpload from "./Pdf_Upload";
 import DropdownItem from '../dropdownItem';
+import { connect } from 'react-redux';
+import {fetchLessons} from '../../redux/actions/fetchLessons'
 
-export default class LessonFormContainer extends Component {
+class LessonFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {grade: 'pick grade', subject: 'pick subject'};
@@ -39,3 +41,5 @@ export default class LessonFormContainer extends Component {
     )
   }
 }
+
+export default connect(null, {fetchLessons})(LessonFormContainer)
