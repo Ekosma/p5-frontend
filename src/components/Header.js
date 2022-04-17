@@ -9,7 +9,6 @@ export default function header() {
       <ul>
         <li><Link to="/"> Teacher Gives Teachers</Link> </li>
         <li><Link to="/Lesson/new">  Upload Lesson </Link></li>
-        <li><Link to="/Lesson/:id">Lessons</Link> </li>
       </ul>
     </div>
   )

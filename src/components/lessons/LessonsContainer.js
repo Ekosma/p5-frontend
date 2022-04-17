@@ -6,8 +6,6 @@ import Card from './Cards'
 
  class LessonContainer extends Component {
 
-
-
   constructor(props) {
     super(props);
     this.state = {grade: 'grade', subject: 'subject'};

@@ -16,7 +16,7 @@ const Cards = (props) => {
       <Card.Text>
         {x.grade}
         {x.subject}
-        <Link class="btn btn-primary stretched-link" to={"/Lesson/" + x.id}>Lessons</Link>
+        <Link className="btn btn-primary stretched-link" to={"/Lesson/" + x.id}>Lessons</Link>
       </Card.Text>
     </Card.Body>
     </Card>

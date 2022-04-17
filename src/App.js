@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LessonForm from "./components/lessonForm/LessonFormContainer";
 import Lesson from "./components/lesson/LessonContainer";
-import Lessons from "./components/lessons/LessonContainer"
+import Lessons from "./components/lessons/LessonsContainer"
 import Header from './components/Header';
 import Footer from "./components/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
