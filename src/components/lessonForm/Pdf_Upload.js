@@ -1,8 +1,19 @@
 import React from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 
-export default class PDF_Upload extends React.Component {
-  state = {
+const PDF_Upload = (props) => {
+
+    return (
+      <div>
+      <label className="form-label" htmlFor="customFile">Upload Lesson</label>
+      <input type="file" className="form-control" id="customFile" onChange={props.onChange}/>
+      </div>
+    )
+  }
+
+export default PDF_Upload
+  
+  /*state = {
 
     // Initially, no file is selected
     selectedFile: null
@@ -78,5 +89,5 @@ export default class PDF_Upload extends React.Component {
       {this.fileData()}
       </div>
     );
-    }
-  }
+    }*/
+  

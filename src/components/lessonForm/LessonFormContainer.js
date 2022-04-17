@@ -4,11 +4,12 @@ import DropdownItem from '../dropdownItem';
 import { connect } from 'react-redux';
 import {fetchLessons} from '../../redux/actions/fetchLessons'
 import { Form, Button } from 'react-bootstrap';
+import Upload from './Pdf_Upload';
 
 class LessonFormContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {grade: 'no grade specified', subject: 'no subject specified', name: 'title', description: 'description'};
+    this.state = {grade: 'no grade specified', subject: 'no subject specified', name: 'title', description: 'description', content: ''};
   };
 
   gradeChoice = (e) => {
@@ -43,6 +44,14 @@ class LessonFormContainer extends Component {
     })
   }
 
+  uploadedContent = (e) => {
+    e.preventDefault();
+    console.log(e.target.files[0])
+    this.setState({
+      content: e.target.files[0]
+    })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
     //console.log("handleSubmit")
@@ -51,7 +60,8 @@ class LessonFormContainer extends Component {
       name: this.state.name,
       description: this.state.description,
       grade: this.state.grade,
-      subject: this.state.subject
+      subject: this.state.subject,
+      content: this.state.content,
     }
     //console.log(lesson)
     this.props.fetchLessons(lesson)
@@ -66,6 +76,7 @@ class LessonFormContainer extends Component {
     const listSubject = <DropdownItem list={subjects} choice={this.state.subject} onClick={this.subjectChoice} />
     const name = <textarea id="name" rows="1" onChange={this.nameChoice} />
     const description = <textarea id="description" rows="5" onChange={this.descriptionChoice} />
+    const content = <Upload onChange={this.uploadedContent}/>
     return (
       <Form onSubmit={this.handleSubmit}>
         <h1>LESSON FORM PAGE</h1>
@@ -73,6 +84,7 @@ class LessonFormContainer extends Component {
         {description}
         {listGrade}
         {listSubject}
+        {content}
         <Button variant="primary" type="submit">Submit</Button>
       </Form>
     )
