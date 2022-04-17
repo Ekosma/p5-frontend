@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AddComment from './AddComment';
 import { connect } from 'react-redux'
 //import RecommendedCount from './RecommendedCount';
-//import Comments from './Comments';
+import Comment from './Comment';
 import { fetchComments } from '../../redux/actions/fetchComments'
 import { fetchLesson } from '../../redux/actions/fetchLesson'
 import { addComment } from '../../redux/actions/addComment'
@@ -42,6 +42,9 @@ class Lesson extends Component {
   render() {
     console.log(this.props.lesson)
     console.log(this.props.comments)
+    const commentsList = this.props.comments.map((x) =>
+    <Comment key={x.id} data={x} />
+    )
     return (
       <div>
       <h1>{this.props.lesson.name}</h1> 
@@ -49,6 +52,7 @@ class Lesson extends Component {
       <p>{this.props.lesson.grade}</p>
       <p>{this.props.lesson.subject}</p>
       <AddComment handleSubmit={this.handleSubmit} comment={this.state.comment}/>
+      {commentsList}
     </div>
     )
   }  

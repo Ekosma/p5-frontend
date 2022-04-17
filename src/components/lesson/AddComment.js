@@ -2,8 +2,6 @@ import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 
 export default function AddComment(props) {
-  
-  
 
   return (
     <Form onSubmit={props.handleSubmit}>
