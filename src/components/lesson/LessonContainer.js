@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import AddComment from './AddComment';
+//import AddComment from './AddComment';
 import { connect } from 'react-redux'
 //import RecommendedCount from './RecommendedCount';
-import Comments from './Comments';
+//import Comments from './Comments';
 //import fetchComment from '../../redux/actions/fetchComment'
 import { fetchLesson } from '../../redux/actions/fetchLesson'
 
@@ -11,7 +11,7 @@ class Lesson extends Component {
   constructor(props) {
     super(props);
     console.log(props)
-    this.state = {grade: 'grade', subject: 'subject'};
+    this.state = {comment: ''};
   };
 
   componentDidMount() {
@@ -22,22 +22,23 @@ class Lesson extends Component {
   }
 
   render() {
+    console.log(this.props.lesson)
     return (
       <div>
-      <h1>Lesson Page</h1> 
+      <h1>{this.props.lesson.name}</h1> 
+      <p>{this.props.lesson.description}</p>
+      <p>{this.props.lesson.grade}</p>
+      <p>{this.props.lesson.subject}</p>
 
-      <AddComment />
-      
-      <Comments />
     </div>
     )
   }  
 }
 
 const mapStateToProps = state => {
-  //console.log(state)
+  //console.log(state.uploadForm.lesson)
   return {
-    lessons: state.uploadForm.lessons
+    lesson: state.uploadForm.lesson
   }
 }
 

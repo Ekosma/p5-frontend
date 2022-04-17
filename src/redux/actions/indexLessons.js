@@ -9,6 +9,6 @@ export const indexLessons = (data) => {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((lessons) => dispatch({ type: "FETCH_LESSON_SUCCESS", payload: lessons }))
+      .then((lessons) => dispatch({ type: "FETCH_LESSONS_SUCCESS", payload: lessons }))
   }
 }

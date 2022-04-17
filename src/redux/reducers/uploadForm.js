@@ -1,5 +1,6 @@
 const initialState = {
-  lessons: []
+  lessons: [],
+  lesson:[]
 }
 
 // Use the initialState as a default value
@@ -9,8 +10,10 @@ export default function appReducer(state = initialState, action) {
     case "UPLOAD_LESSON_SUCCESS":
       //console.log(action)
       return {...state, lessons: action.payload}
-    case "FETCH_LESSON_SUCCESS":
+    case "FETCH_LESSONS_SUCCESS":
       return {...state, lessons: action.payload}
+    case "FETCH_SINGLE_LESSON_SUCCESS":
+        return {...state, lesson: action.payload}
     default:
       return state
   }

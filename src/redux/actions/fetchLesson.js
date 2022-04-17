@@ -10,6 +10,6 @@ export const fetchLesson = (data) => {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((lessons) => dispatch({ type: "UPLOAD_LESSON_SUCCESS", payload: lessons }))
+      .then((lessons) => dispatch({ type: "FETCH_SINGLE_LESSON_SUCCESS", payload: lessons }))
   }
 }
