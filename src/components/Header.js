@@ -6,7 +6,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 export default function header() {
   return (
     <div>
-      <Navbar collapseOnSelect fixed='top' bg="light" expand="sm">
+      <Navbar collapseOnSelect bg="light" expand="sm">
         <Container>
           <Navbar.Toggle aria-controls='responsive-nav-bar'/>
           <Navbar.Collapse id='responsive-navbar-nav'>

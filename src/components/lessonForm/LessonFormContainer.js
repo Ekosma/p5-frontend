@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import {fetchLessons} from '../../redux/actions/fetchLessons'
 import { Form, Button } from 'react-bootstrap';
 import Upload from './Pdf_Upload';
+import './LessonFormContainer.css';
+import { Card } from 'react-bootstrap'
+
 
 class LessonFormContainer extends Component {
   constructor(props) {
@@ -78,15 +81,29 @@ class LessonFormContainer extends Component {
     const description = <textarea id="description" rows="5" onChange={this.descriptionChoice} />
     const content = <Upload onChange={this.uploadedContent}/>
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <h1>LESSON FORM PAGE</h1>
-        {name}
-        {description}
-        {listGrade}
-        {listSubject}
-        {content}
-        <Button variant="primary" type="submit">Submit</Button>
-      </Form>
+      <Card style={{ maxWidth: '22rem', margin: '25px'}} class="card bg-light mb-3 ">
+        <Form onSubmit={this.handleSubmit} className='form'>
+          <h1>LESSON FORM PAGE</h1>
+          <div>
+            Name:{name}
+          </div>
+          <div>
+            Description:{description}
+          </div>
+          <div>
+            Choose Grade Level:{listGrade}
+          </div>
+          <div>
+            Choose Subject:{listSubject}
+          </div>
+          <div>
+            Upload Lesson:{content}
+          </div>
+          <div>
+            <Button variant="primary" type="submit">Submit</Button>
+          </div>
+        </Form>
+      </Card>
     )
   }
 }
