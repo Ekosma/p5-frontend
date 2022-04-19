@@ -22,17 +22,21 @@ const Cards = (props) => {
 };
 
   const lessons = props.data.map((x) =>
-    <Card key={x.id}>
+    <Card key={x.id} style={{ maxWidth: '22rem', margin: '25px'}} class="card bg-light mb-3 ">
       <Card.Header>
       {x.name}
     </Card.Header>
     <Card.Body >  
       <Card.Subtitle>
-        {x.description}
+        Description:{x.description}
       </Card.Subtitle>
       <Card.Text>
-        {x.grade}
-        {x.subject}
+        Grade Level:{x.grade}
+      </Card.Text>
+      <Card.Text>
+      Subject:{x.subject}
+      </Card.Text>
+      <Card.Text>
         <Document file={x.content} />
         <Link className="btn btn-primary stretched-link" to={"/Lesson/" + x.id}>Lessons</Link>
       </Card.Text>

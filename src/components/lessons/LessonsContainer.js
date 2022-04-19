@@ -39,12 +39,14 @@ import Card from './Cards'
     //console.log(this.props.lessons)
     //console.log(this.state.grade)
     //console.log(filteredLessons)
-    const listLessons = <Card data={filteredLessons} />
+    const listLessons = <div class="card-group"><Card data={filteredLessons} id="cards" /></div>
     //console.log(this.props.lessons)
     return ( 
       <div>
         <Search grade={this.state.grade} subject={this.state.subject} gradeChoice={this.gradeChoice} subjectChoice={this.subjectChoice} />
-        {listLessons}
+        <div id="cards" class="d-flex  justify-content-center" style={{ margin: '.25rem', padding: '10px'}} >
+          {listLessons }
+        </div>
       </div>
     )
   }
