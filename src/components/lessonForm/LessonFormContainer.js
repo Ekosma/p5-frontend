@@ -97,7 +97,7 @@ class LessonFormContainer extends Component {
             Choose Subject:{listSubject}
           </div>
           <div>
-            Upload Lesson:{content}
+            {content}
           </div>
           <div>
             <Button variant="primary" type="submit">Submit</Button>
