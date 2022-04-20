@@ -81,7 +81,7 @@ class LessonFormContainer extends Component {
     const description = <textarea id="description" rows="5" onChange={this.descriptionChoice} />
     const content = <Upload onChange={this.uploadedContent}/>
     return (
-      <Card style={{ maxWidth: '22rem', margin: '25px'}} class="card bg-light mb-3 ">
+      <Card style={{ maxWidth: '22rem', margin: '25px'}} className="card bg-light mb-3 ">
         <Form onSubmit={this.handleSubmit} className='form'>
           <h1>LESSON FORM PAGE</h1>
           <div>

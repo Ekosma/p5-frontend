@@ -12,7 +12,7 @@ export default function header() {
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav>
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/Lesson/new">Link</Nav.Link>
+              <Nav.Link href="/Lesson/new">Upload Lesson</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

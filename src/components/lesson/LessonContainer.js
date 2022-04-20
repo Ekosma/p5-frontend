@@ -6,14 +6,13 @@ import Comment from './Comment';
 import { fetchComments } from '../../redux/actions/fetchComments'
 import { fetchLesson } from '../../redux/actions/fetchLesson'
 import { addComment } from '../../redux/actions/addComment'
-
+//import { Document } from 'react-pdf/dist/esm/entry.webpack5'
 
 
 class Lesson extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
-    this.state = {comment: '', recommended: 0 };
+    this.state = {comment: '', recommended: 0, lesson: {content: ''}};
     const url = window.location.pathname
     const str = url.split('/')
     this.lesson_id = str.at(-1)
@@ -22,6 +21,8 @@ class Lesson extends Component {
   componentDidMount() {
     this.props.fetchLesson(this.lesson_id)
     this.props.fetchComments(this.lesson_id)
+    //console.log(this.props.lesson.content)
+    //console.log(this)
   }
 
   handleSubmit = (e) => {
@@ -40,17 +41,19 @@ class Lesson extends Component {
   }
 
   render() {
-    console.log(this.props.lesson)
-    console.log(this.props.comments)
+    //console.log(this.props.lesson)
+    //console.log(this.props.comments)
     const commentsList = this.props.comments.map((x) =>
     <Comment key={x.id} data={x} />
     )
+    console.log(this.props.lesson.content)
     return (
       <div>
       <h1>{this.props.lesson.name}</h1> 
       <p>{this.props.lesson.description}</p>
       <p>{this.props.lesson.grade}</p>
       <p>{this.props.lesson.subject}</p>
+      <embed type="application/pdf" src={'data:application/pdf;base64,' + this.props.lesson.content} />
       <AddComment handleSubmit={this.handleSubmit} comment={this.state.comment}/>
       {commentsList}
     </div>
@@ -59,11 +62,12 @@ class Lesson extends Component {
 }
 
 const mapStateToProps = state => {
-  //console.log(state.uploadForm.lesson)
+  console.log(state.uploadForm.lesson)
   return {
     lesson: state.uploadForm.lesson,
     comments: state.uploadForm.comments
   }
 }
+
 
 export default connect(mapStateToProps, {fetchLesson, addComment, fetchComments})(Lesson)
