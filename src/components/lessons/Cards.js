@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 const Cards = (props) => {
 
   const lessons = props.data.map((x) =>
-    <Card key={x.id} style={{ maxWidth: '22rem', margin: '25px'}} class="card bg-light mb-3 ">
+    <Card key={x.id} style={{ maxWidth: '22rem', margin: '25px'}} className="card bg-light mb-3 ">
       <Card.Header>
       {x.name}
     </Card.Header>

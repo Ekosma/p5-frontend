@@ -34,8 +34,8 @@ import Card from './Cards'
 
   render() {
     const filteredLessons = this.props.lessons
-      .filter(lesson => this.state.grade === 'grade' ? true : lesson.grade === this.state.grade)
-      .filter(lesson => this.state.subject === 'subject' ? true : lesson.subject === this.state.subject)
+      .filter(lesson => this.state.grade === 'grade' || this.state.grade.trim() === 'All Grade Levels' ? true : lesson.grade === this.state.grade)
+      .filter(lesson => this.state.subject === 'subject' || this.state.subject.trim() === 'All Subjects' ? true : lesson.subject === this.state.subject)
     //console.log(this.props.lessons)
     //console.log(this.state.grade)
     //console.log(filteredLessons)
