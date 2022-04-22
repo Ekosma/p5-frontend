@@ -15,7 +15,7 @@ export default function appReducer(state = initialState, action) {
       return {...state, lessons: action.payload}
     case "FETCH_SINGLE_LESSON_SUCCESS":
       return {...state, lesson: action.payload}
-    case "ADD_COMMENTS_SUCCESS":
+    case "ADD_COMMENT_SUCCESS":
       return  {...state, comments: action.payload}
       case "FETCH_COMMENTS_SUCCESS":
         return  {...state, comments: action.payload}
