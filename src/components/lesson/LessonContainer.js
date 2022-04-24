@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import AddComment from './AddComment';
 import { connect } from 'react-redux'
 //import RecommendedCount from './RecommendedCount';
@@ -12,7 +12,7 @@ import { addComment } from '../../redux/actions/addComment'
 class Lesson extends Component {
   constructor(props) {
     super(props);
-    this.state = {comments: [], lesson: {content: ''}};
+    this.state = {comments: '', lesson: {content: ''}};
     const url = window.location.pathname
     const str = url.split('/')
     this.lesson_id = str.at(-1)
@@ -25,26 +25,45 @@ class Lesson extends Component {
     //console.log(this)
   }
 
-  onChange = (e) => {this.setState({comments: [...this.props.comments, e.target.value]}); console.log(this.state); console.log(this.props)} 
+  //onChange = (e) => {this.setState({comments: [...this.props.comments, e.target.value]}); console.log(this.state.comments)} 
+
+  commentChange = (e) => {
+    e.preventDefault();
+    this.setState({
+      comments: e.target[0].value
+    })
+    console.log(this.state.comments)
+  }
+
+  /*resetComment = (e) => {
+    const comment = e.target[0].value
+    this.setState({
+      comment: ''
+    })
+  }*/
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target[0].value)
+    //console.log(e.target[0].value)
     //console.log("handleSubmit")
     //console.log(e)
+    console.log(this.state)
     const comment = {
       lesson_id: this.lesson_id,
       comment: e.target[0].value,
     }
     //console.log(lesson)
     this.props.addComment(comment)
+    //this.resetComment(e)
+    //console.log(this.state)
     //console.log(this.props)
-    //console.log("handleSubmit")
+    //console.log()
   }
 
   render() {
     //console.log(this.props.lesson)
-    console.log(this.props.comments)
+    //console.log(this.props.comments)
+    //console.log(this.state.comments)
     const commentsList = this.props.comments.slice(0).reverse().map((x) =>
     <Comment key={x.id} data={x} />
     )
@@ -56,7 +75,7 @@ class Lesson extends Component {
       <p>Grade Level:{this.props.lesson.grade}</p>
       <p>Subject:{this.props.lesson.subject}</p>
       <embed type="application/pdf" src={'data:application/pdf;base64,' + this.props.lesson.content} height="700px" width="80%" />
-      <AddComment handleSubmit={this.handleSubmit} comments={this.state.comment} onChange={this.onChange}/>
+      <AddComment onChange={this.commentChange} handleSubmit={this.handleSubmit} comments={this.state.comments} required={true}/>
       {commentsList}
     </div>
     )
@@ -64,7 +83,7 @@ class Lesson extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.uploadForm.lesson)
+  //console.log(state.uploadForm.lesson)
   return {
     lesson: state.uploadForm.lesson,
     comments: state.uploadForm.comments

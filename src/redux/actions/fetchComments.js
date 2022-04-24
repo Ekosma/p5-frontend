@@ -1,7 +1,7 @@
 export const fetchComments = (data) => {
-  console.log(data)
+  //console.log(data)
   return(dispatch) => {
-    console.log("fetchComments")
+    //console.log("fetchComments")
     fetch(`http://localhost:3001/reviews/${data}`, {
       headers: {
         "Content-Type": "application/json",

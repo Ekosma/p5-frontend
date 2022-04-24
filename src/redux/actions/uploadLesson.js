@@ -1,4 +1,4 @@
-export const fetchLessons = (data) => {
+export const uploadLesson = (data) => {
   console.log(data)
   const formData = new FormData();
   for (const [key, value] of Object.entries(data)) {
@@ -6,7 +6,7 @@ export const fetchLessons = (data) => {
   }
   console.log(formData)
   return(dispatch) => {
-    console.log("fetchLessons")
+    console.log("uploadLessons")
     fetch(`http://localhost:3001/lessons`, {
       headers: {
         //"Content-Type": "application/json",
