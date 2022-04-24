@@ -5,7 +5,7 @@ export default function AddComment(props) {
 
   return (
     <Form onSubmit={props.handleSubmit}>
-      <Form.Control type="input" as="textarea" required={true}></Form.Control>
+      <Form.Control type="input" as="textarea" required={true} value={props.comment} onChange={props.onChange}></Form.Control>
       <Button variant="primary" type="submit" >Submit</Button>
     </Form>
   )
