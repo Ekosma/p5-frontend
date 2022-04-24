@@ -75,7 +75,7 @@ class Lesson extends Component {
       <p>Grade Level:{this.props.lesson.grade}</p>
       <p>Subject:{this.props.lesson.subject}</p>
       <embed type="application/pdf" src={'data:application/pdf;base64,' + this.props.lesson.content} height="700px" width="80%" />
-      <AddComment onChange={this.commentChange} handleSubmit={this.handleSubmit} comments={this.state.comments} required={true}/>
+      <AddComment onChange={this.commentChange} handleSubmit={this.handleSubmit} comments={this.state.comments} />
       {commentsList}
     </div>
     )
