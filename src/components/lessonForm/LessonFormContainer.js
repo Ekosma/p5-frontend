@@ -129,26 +129,3 @@ class LessonFormContainer extends Component {
 
 export default connect(null, {uploadLesson})(LessonFormContainer)
 
-
-/*
-const [grade, setGrade] = useState("no grade specified")
-  const [subject, SetSubject] = useState("no subject specified")
-  const [name, setName] = useState("")
-  const [description, setDescription] = useState("")
-  const [content, setContent] = useState("")
-  
-
-  handleChange = (e) => {
-    console.log(e)
-    e.target=="grade" 
-    ? setGrade(e.target.innerHTML)
-    : e.target.name=="subject" 
-    ? setSubject(e.target.innerHTML)
-    : e.target.name=="name" 
-    ? setName(e.target.value)
-    : e.target.name=="description" 
-    ? setDescription(e.target.value)
-    : e.target.name=="content" 
-    ? setContent(e.target.files[0])
-    : console.log("error")
-  }*/
