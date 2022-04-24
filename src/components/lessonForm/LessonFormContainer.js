@@ -11,7 +11,7 @@ import { Card } from 'react-bootstrap'
 class LessonFormContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {grade: 'no grade specified', subject: 'no subject specified', name: '', description: '', content: []};
+    this.state = {grade: 'no grade specified', subject: 'no subject specified', name: '', description: '', content: [], key: 0 };
   };  
 
   gradeChoice = (e) => {
@@ -45,7 +45,7 @@ class LessonFormContainer extends Component {
     this.setState({
       description: e.target.value
     })
-    console.log(this.state.description)
+    //console.log(this.state.description)
   }
 
   uploadedContent = (e) => {
@@ -69,7 +69,6 @@ class LessonFormContainer extends Component {
       content: this.state.content,
     }
     //console.log(lesson)
-    
     this.props.uploadLesson(lesson)
     //onSubmitProps.setSubmitting(false)
     //onSubmitProps.resetForm()
@@ -84,6 +83,7 @@ class LessonFormContainer extends Component {
       name: '',
       description: '',
       content: [],
+      key: this.state.key + 1 
     })
   }
 
@@ -96,7 +96,7 @@ class LessonFormContainer extends Component {
     const listSubject = <DropdownItem list={subjects} choice={this.state.subject} onClick={this.subjectChoice} required={true}/>
     const name = <textarea id="name" rows="1" value={this.state.name} onChange={this.nameChoice} required={true}/>
     const description = <textarea id="description" rows="5" value={this.state.description} onChange={this.descriptionChoice} required={true}/>
-    const content = <Upload onChange={this.uploadedContent} files={this.state.content} required={true}/>
+    const content = <Upload onChange={this.uploadedContent} key={this.state.key} />
     return (
       <Card style={{ maxWidth: '22rem', margin: '25px'}} className="card bg-light mb-3 ">
         <Form onSubmit={this.handleSubmit} className='form'>

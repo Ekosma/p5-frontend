@@ -6,7 +6,7 @@ const PDF_Upload = (props) => {
     return (
       <div>
       <label className="form-label" htmlFor="customFile">Upload Lesson:</label>
-      <input type="file" className="form-control" accept="application/pdf" id="customFile" onChange={props.onChange}/>
+      <input type="file" className="form-control" accept="application/pdf" id="customFile" onChange={props.onChange} required={true}/>
       </div>
     )
   }
