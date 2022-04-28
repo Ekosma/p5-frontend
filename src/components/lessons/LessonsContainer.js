@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Search from './Search'
 import { connect } from 'react-redux'
 import {indexLessons} from '../../redux/actions/indexLessons'
-import Card from './Cards'
+import Cards from './Cards'
 
  class LessonContainer extends Component {
 
@@ -39,7 +39,7 @@ import Card from './Cards'
     //console.log(this.props.lessons)
     //console.log(this.state.grade)
     //console.log(filteredLessons)
-    const listLessons = <div className="card-group"><Card data={filteredLessons} id="cards" /></div>
+    const listLessons = <Cards data={filteredLessons} id="cards" />
     //console.log(this.props.lessons)
     return ( 
       <div>

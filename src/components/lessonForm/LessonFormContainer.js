@@ -1,11 +1,11 @@
 import React, { Component, useEffect, useState } from 'react'
 import PdfUpload from "./Pdf_Upload";
-import DropdownItem from '../dropdownItem';
+import DropdownItem from '../lessons/dropdownItem';
 import { connect } from 'react-redux';
 import {uploadLesson} from '../../redux/actions/uploadLesson'
 import { Form, Button } from 'react-bootstrap';
 import Upload from './Pdf_Upload';
-import './LessonFormContainer.css';
+//import './LessonFormContainer.css';
 import { Card } from 'react-bootstrap'
 
 class LessonFormContainer extends Component {

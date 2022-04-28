@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DropdownItem from '../dropdownItem';
+import DropdownItem from './dropdownItem';
 import { Button } from 'react-bootstrap';
 import "./Search.css"
 
@@ -14,7 +14,7 @@ export default class Search extends Component {
     
     return (
     <div id="search">
-      test test {listGrade} test test {listSubject}
+      Select a grade:{listGrade} Select a Subject: {listSubject}
     </div>
     )
   }

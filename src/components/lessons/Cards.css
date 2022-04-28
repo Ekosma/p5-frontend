@@ -1,4 +1,15 @@
-.div {
+.cards {
   display: flex;
-  
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.card {
+  margin: 25px;
+  width: 500px;
+}
+
+.hidden {
+  display: none;
 }

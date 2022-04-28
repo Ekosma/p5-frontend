@@ -4,10 +4,8 @@ import LessonForm from "./components/lessonForm/LessonFormContainer";
 import Lesson from "./components/lesson/LessonContainer";
 import Lessons from "./components/lessons/LessonsContainer"
 import Header from './components/Header';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import './App.css';
 
 
 function App() {

@@ -1,15 +1,13 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-//import { Document } from 'react-pdf/dist/esm/entry.webpack5'
-//import { Document} from 'react-pdf';
-
+import "./Cards.css"
 
 
 const Cards = (props) => {
 
   const lessons = props.data.map((x) =>
-    <Card key={x.id} style={{ maxWidth: '22rem', margin: '25px'}} className="card bg-light mb-3 ">
+    <Card key={x.id} className="card bg-light text-center mb-3 ">
       <Card.Header>
       {x.name}
     </Card.Header>
@@ -23,16 +21,14 @@ const Cards = (props) => {
       <Card.Text>
       Subject:{x.subject}
       </Card.Text>
-      <Card>
-        <Link className="btn btn-primary stretched-link" to={"/Lesson/" + x.id}>Lessons</Link>
-      </Card>
+      <Link className="hidden btn stretched-link" to={"/Lesson/" + x.id}></Link>
     </Card.Body>
     </Card>
   )
   return (
-  <div>
+  <div className="cards" >
     {lessons}
-</div>
+  </div>
   )
 }
 

@@ -6,6 +6,7 @@ import Comment from './Comment';
 import { fetchComments } from '../../redux/actions/fetchComments'
 import { fetchLesson } from '../../redux/actions/fetchLesson'
 import { addComment } from '../../redux/actions/addComment'
+import './LessonContainer.css'
 //import { Document } from 'react-pdf/dist/esm/entry.webpack5'
 
 
@@ -55,15 +56,21 @@ class Lesson extends Component {
     )
     //console.log(this.props.lesson.content)
     return (
-      <div>
-      <h1>{this.props.lesson.name}</h1> 
-      <p>Description:{this.props.lesson.description}</p>
-      <p>Grade Level:{this.props.lesson.grade}</p>
-      <p>Subject:{this.props.lesson.subject}</p>
-      <embed type="application/pdf" src={'data:application/pdf;base64,' + this.props.lesson.content} height="700px" width="80%" />
-      <AddComment onChange={this.commentChange} handleSubmit={this.handleSubmit} comment={this.state.comment} />
-      {commentsList}
-    </div>
+        <div className="lesson">
+          <div className='lesson-info'>
+            <h1>{this.props.lesson.name}</h1>
+            <div>Description{this.props.lesson.description}</div>
+            <div>Grade Level{this.props.lesson.grade}</div>
+            <div>Subject{this.props.lesson.subject}</div>
+          </div>
+          <div className='pdf'><embed type="application/pdf" src={'data:application/pdf;base64,' + this.props.lesson.content} height="700px" width="80%" /></div>
+          <div className='comments' >
+            <AddComment onChange={this.commentChange} handleSubmit={this.handleSubmit} comment={this.state.comment} />
+            <ul className='comment'>
+              {commentsList}
+            </ul>
+          </div>
+        </div>
     )
   }  
 }
