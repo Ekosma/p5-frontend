@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {uploadLesson} from '../../redux/actions/uploadLesson'
 import { Form, Button } from 'react-bootstrap';
 import Upload from './Pdf_Upload';
-//import './LessonFormContainer.css';
+import './LessonFormContainer.css';
 import { Card } from 'react-bootstrap'
 
 class LessonFormContainer extends Component {
@@ -98,31 +98,44 @@ class LessonFormContainer extends Component {
     const description = <textarea id="description" rows="5" value={this.state.description} onChange={this.descriptionChoice} required={true}/>
     const content = <Upload onChange={this.uploadedContent} key={this.state.key} />
     return (
-      <Card style={{ maxWidth: '22rem', margin: '25px'}} className="card bg-light mb-3 ">
+      <div className="upload">
         <Form onSubmit={this.handleSubmit} className='form'>
           <h1>LESSON FORM PAGE</h1>
-          <div>
-            Name:{name}
+          <div className='title'>
+            Name
+            <div>
+              {name}
+            </div>
           </div>
-          <div>
-            Description:{description}
+          <div className='title'>
+            Description
+            <div className='body'> 
+              {description}
+            </div>
           </div>
-          <div>
-            Choose Grade Level:{listGrade}
+          <div className='title'>
+            Choose Grade Level
+            <div className='body'>
+            {listGrade}
+            </div>
           </div>
-          <div>
-            Choose Subject:{listSubject}
+          <div className='title'>
+            Choose Subject
+            <div className='body'>
+              {listSubject}
+            </div>
           </div>
-          <div>
+          <div className='pdf'>
             {content}
           </div>
-          <div>
+          <div className='btn'>
             <Button variant="primary" type="submit">Submit</Button>
           </div>
-          <Button type='reset'>Reset</Button>
+          <div className='btn'>
+            <Button type='reset'>Reset</Button>
+          </div>
         </Form>
-        
-      </Card>
+      </div>
     )
   }
 }

@@ -1,0 +1,17 @@
+.form {
+  margin: 20px 50px;
+}
+
+.upload {
+  text-align: center;
+  margin: 20px;
+}
+
+.title {
+  text-decoration: underline;
+  margin: 20px;
+}
+
+.btn {
+  margin: 10px;
+}

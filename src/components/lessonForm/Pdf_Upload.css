@@ -1,0 +1,7 @@
+.form-label {
+  text-decoration: underline;
+}
+
+.form-control {
+  max-width: 300px;
+}

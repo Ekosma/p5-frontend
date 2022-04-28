@@ -1,11 +1,11 @@
 import React from 'react'
-//import axios from 'axios'
+import './Pdf_Upload.css'
 
 const PDF_Upload = (props) => {
 
     return (
       <div>
-      <label className="form-label" htmlFor="customFile">Upload Lesson:</label>
+      <label className="form-label" htmlFor="customFile">Upload File</label>
       <input type="file" className="form-control" accept="application/pdf" id="customFile" onChange={props.onChange} required={true}/>
       </div>
     )
