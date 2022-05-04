@@ -9,7 +9,7 @@ const Cards = (props) => {
   const lessons = props.data.map((x) =>
     <Card key={x.id} className="card bg-light text-center mb-3 ">
       <Card.Header>
-      {x.name}
+      <h3>{x.name}</h3>
     </Card.Header>
     <Card.Body >  
       <Card.Subtitle>
