@@ -1,4 +1,10 @@
-#search {
+.search {
   display: flex;
   justify-content: center;
 }
+
+.search-by {
+  margin: 20px;
+  text-decoration: underline;
+}
+

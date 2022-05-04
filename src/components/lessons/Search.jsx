@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import DropdownItem from './dropdownItem';
-import { Button } from 'react-bootstrap';
 import "./Search.css"
 
 export default class Search extends Component {
@@ -13,8 +12,19 @@ export default class Search extends Component {
     const listSubject = <DropdownItem list={subjects} choice={this.props.subject} onClick={this.props.subjectChoice} />
     
     return (
-    <div id="search">
-      Select a grade:{listGrade} Select a Subject: {listSubject}
+    <div className="search">
+      <div className='search-by'>
+        Filter by grade
+        <div>
+          {listGrade}
+        </div>
+      </div>
+      <div className='search-by'>
+          Filter by Subject
+        <div>
+          {listSubject}
+        </div>
+      </div>
     </div>
     )
   }

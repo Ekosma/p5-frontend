@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react'
 import AddComment from './AddComment';
 import { connect } from 'react-redux'
-//import RecommendedCount from './RecommendedCount';
 import Comment from './Comment';
 import { fetchComments } from '../../redux/actions/fetchComments'
 import { fetchLesson } from '../../redux/actions/fetchLesson'
@@ -24,9 +23,7 @@ class Lesson extends Component {
     this.props.fetchComments(this.lesson_id)
     //console.log(this.props.lesson.content)
     //console.log(this)
-  }
-
-  //onChange = (e) => {this.setState({comments: [...this.props.comments, e.target.value]}); console.log(this.state.comments)} 
+  } 
 
   commentChange = (e) => {
     e.preventDefault();
