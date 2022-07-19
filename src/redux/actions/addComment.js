@@ -14,3 +14,4 @@ export const addComment = (data) => {
       .then((comments) => dispatch({ type: "ADD_COMMENT_SUCCESS", payload: comments }))
   }
 }
+

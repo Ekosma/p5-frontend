@@ -45,7 +45,7 @@ import Cards from './Cards'
       <div>
         <Search grade={this.state.grade} subject={this.state.subject} gradeChoice={this.gradeChoice} subjectChoice={this.subjectChoice} />
         <div id="cards" className="d-flex  justify-content-center" style={{ margin: '.25rem', padding: '10px'}} >
-          {listLessons }
+          {listLessons}
         </div>
       </div>
     )

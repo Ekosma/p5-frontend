@@ -40,7 +40,7 @@ class LessonFormContainer extends Component {
 
   descriptionChoice = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    //console.log(e.target.value)
     this.setState({
       description: e.target.value
     })
@@ -49,7 +49,7 @@ class LessonFormContainer extends Component {
 
   uploadedContent = (e) => {
     e.preventDefault();
-    console.log(e.target.files)
+    //console.log(e.target.files)
     this.setState({
       content: e.target.files[0]
     })
@@ -129,9 +129,6 @@ class LessonFormContainer extends Component {
           </div>
           <div className='btn'>
             <Button variant="primary" type="submit">Submit</Button>
-          </div>
-          <div className='btn'>
-            <Button type='reset'>Reset</Button>
           </div>
         </Form>
       </div>
