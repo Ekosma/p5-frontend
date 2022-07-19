@@ -19,4 +19,4 @@ This is created with a MIT license.
 ---
 
 ### Acknowledgements
-Initally created for Flatiron School Ruby On Rails Portfolio Project
+Initally created for Flatiron School Ruby On Rails with React Portfolio Project
